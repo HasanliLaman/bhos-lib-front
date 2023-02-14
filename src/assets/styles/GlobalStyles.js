@@ -5,8 +5,8 @@ import Variables from "./Variables";
 
 const GlobalStyle = createGlobalStyle`
 ${Reset}
-${Variables}
 ${Typography}
+${Variables}
 `;
 
 export default GlobalStyle;

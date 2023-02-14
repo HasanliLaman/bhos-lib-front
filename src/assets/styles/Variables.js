@@ -9,6 +9,7 @@ const Variables = css`
     --color-accent: #000000;
     --color-lighter: #999999;
     --color-border: #e6e6e6;
+    --color-rating: #fa8c17;
 
     --screen-sm: 576px;
     --screen-md: 768px;
