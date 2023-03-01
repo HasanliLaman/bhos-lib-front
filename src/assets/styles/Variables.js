@@ -10,6 +10,7 @@ const Variables = css`
     --color-lighter: #999999;
     --color-border: #e6e6e6;
     --color-rating: #fa8c17;
+    --color-footer: #282828;
 
     --screen-sm: 576px;
     --screen-md: 768px;

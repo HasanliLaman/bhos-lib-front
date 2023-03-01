@@ -1,11 +1,13 @@
 import GlobalStyle from "./assets/styles/GlobalStyles";
-import NavContainer from "./components/Navbar/NavContainer";
+import FooterContainer from "./components/Footer/FooterContainer";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <div></div>
+      <div>
+        <FooterContainer />
+      </div>
     </>
   );
 };
