@@ -1,10 +1,13 @@
 import GlobalStyle from "./assets/styles/GlobalStyles";
+import SeeMore from "./components/SeeMore";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <div></div>
+      <div>
+        <SeeMore />
+      </div>
     </>
   );
 };
