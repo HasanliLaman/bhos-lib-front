@@ -1,15 +1,13 @@
 import styled from "styled-components";
 
 const StyleBookInfoContainer = styled.div`
-  padding: 2rem;
-  &.horizontal {
-    padding: 2rem;
+  &.vertical {
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
 
-  &.vertical {
+  &.horizontal {
     display: grid;
     gap: 3rem;
   }

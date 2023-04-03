@@ -3,9 +3,11 @@ import BookInfoArticle from "../BookInfoArticle";
 import StyleBookInfoContainer from "./style";
 import book from "../../../../assets/images/book-cover.jpg";
 
-const BookInfoContainer = ({ isVertical }) => {
+const BookInfoContainer = ({ isHorizontal }) => {
   return (
-    <StyleBookInfoContainer className={isVertical ? "vetical" : "horizontal"}>
+    <StyleBookInfoContainer
+      className={isHorizontal ? "horizontal" : "vertical"}
+    >
       <img alt="Book cover" src={book} />
       <BookInfoArticle />
     </StyleBookInfoContainer>

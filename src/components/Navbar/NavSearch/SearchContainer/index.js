@@ -7,7 +7,7 @@ const SearchContainer = () => {
   return (
     <StyleSearchContainer>
       <SearchInput />
-      <SearchResult />
+      {/* <SearchResult /> */}
     </StyleSearchContainer>
   );
 };

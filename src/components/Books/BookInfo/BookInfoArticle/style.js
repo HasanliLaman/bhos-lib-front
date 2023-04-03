@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const StyleBookInfoArticle = styled.article`
+  overflow: hidden;
+
   & > a {
     font-size: 1.6rem;
     line-height: 2.4rem;
@@ -8,8 +10,11 @@ const StyleBookInfoArticle = styled.article`
     color: var(--color-accent);
     margin-bottom: 0.8rem;
     display: inline-block;
-    /* white-space: nowrap;
-    text-overflow: ellipsis; */
+    width: 100%;
+    overflow-x: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
     &:hover {
       color: var(--color-primary);

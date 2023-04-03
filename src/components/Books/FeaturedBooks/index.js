@@ -1,73 +1,66 @@
 import React from "react";
+import Container from "../../UI/Container";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
-import GenreElement from "../GenreElement";
-import Container from "../../UI/Container";
-import Header from "../../UI/Header";
-import StyleGenreSlider from "./style";
+import StyleFeaturedBooks from "./style";
+import BookInfoContainer from "../BookInfo/BookInfoContainer";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
-const GenreSlider = () => {
+const FeaturedBooks = () => {
   return (
-    <StyleGenreSlider>
+    <StyleFeaturedBooks>
       <Container>
-        <Header title="Genres Books" />
+        <h2>Featured Books</h2>
         <Swiper
-          slidesPerView={1}
-          spaceBetween={40}
+          slidesPerView={2}
+          spaceBetween={20}
           navigation={true}
           modules={[Navigation]}
           breakpoints={{
-            576: {
-              slidesPerView: 2,
-              spaceBetween: 40,
-            },
             768: {
               slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 5,
               spaceBetween: 30,
             },
           }}
           className="mySwiper"
         >
           <SwiperSlide>
-            <GenreElement />
+            <BookInfoContainer />
           </SwiperSlide>
           <SwiperSlide>
-            <GenreElement />
+            <BookInfoContainer />
           </SwiperSlide>
           <SwiperSlide>
-            <GenreElement />
+            <BookInfoContainer />
           </SwiperSlide>
           <SwiperSlide>
-            <GenreElement />
+            <BookInfoContainer />
           </SwiperSlide>
           <SwiperSlide>
-            <GenreElement />
+            <BookInfoContainer />
           </SwiperSlide>
           <SwiperSlide>
-            <GenreElement />
+            <BookInfoContainer />
           </SwiperSlide>
           <SwiperSlide>
-            <GenreElement />
+            <BookInfoContainer />
           </SwiperSlide>
           <SwiperSlide>
-            <GenreElement />
+            <BookInfoContainer />
           </SwiperSlide>
           <SwiperSlide>
-            <GenreElement />
-          </SwiperSlide>
-          <SwiperSlide>
-            <GenreElement />
-          </SwiperSlide>
-          <SwiperSlide>
-            <GenreElement />
+            <BookInfoContainer />
           </SwiperSlide>
         </Swiper>
       </Container>
-    </StyleGenreSlider>
+    </StyleFeaturedBooks>
   );
 };
 
-export default GenreSlider;
+export default FeaturedBooks;
