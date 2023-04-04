@@ -1,7 +1,5 @@
 import React from "react";
-import NavbarContainer from "../../components/Navbar/NavContainer";
 import SeeMore from "../../components/SeeMore";
-import FooterContainer from "../../components/Footer/FooterContainer";
 import TestimonialContainer from "../../components/Testimonials/TestimonialContainer";
 import GenreSlider from "../../components/Genres/GenreSlider";
 import BestBooksContainer from "../../components/Books/BestBooksContainer";
@@ -12,7 +10,6 @@ import HeroContainer from "../../components/Hero/HeroContainer";
 const Home = () => {
   return (
     <div>
-      <NavbarContainer />
       <HeroContainer />
       <BestBooksContainer />
       <GenreSlider />
@@ -20,7 +17,6 @@ const Home = () => {
       <DailyReads />
       <TestimonialContainer />
       <SeeMore />
-      <FooterContainer />
     </div>
   );
 };
