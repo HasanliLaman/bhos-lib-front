@@ -33,15 +33,15 @@ const HeroContainer = () => {
           <SwiperSlide>
             <HeroElement
               img={hero1}
-              text="Editor choice"
-              title="Top 10 books of year"
+              text="Baku Higher Oil School Library"
+              title="Explore books of different genres"
             />
           </SwiperSlide>
           <SwiperSlide>
             <HeroElement
               img={hero2}
-              text="Editor choice"
-              title="Top 10 books of year"
+              text="Baku Higher Oil School Library"
+              title="Request book or download e-book"
             />
           </SwiperSlide>
         </Swiper>

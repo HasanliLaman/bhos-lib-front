@@ -25,8 +25,8 @@ const TestimonialContainer = () => {
             text='"I am so happy to find a site where I can shop for unusual items. The packaging was phenomenal and my book arrived on time in perfect condition."'
           />
           <Testimonial
-            name="Laman Hasanli"
-            major="PAE"
+            name="Lala Ismayilzada"
+            major="PE"
             avatar={avatar3}
             text='"I would also like to say thank you to all your staff. Wow what great service, I love it! Thanks for the great service. I sent an email after to books arrived to ask about the author."'
           />

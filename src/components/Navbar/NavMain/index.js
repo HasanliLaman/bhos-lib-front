@@ -1,10 +1,11 @@
 import React from "react";
 import UserDetails from "../UserDetails";
+import { Link } from "react-router-dom";
 import Container from "../../UI/Container";
-import StyleNavMain from "./style";
 import hamburgerIcon from "../../../assets/images/icon-hamburger.svg";
 import logo from "../../../assets/images/logo.svg";
 import SearchContainer from "../NavSearch/SearchContainer";
+import StyleNavMain from "./style";
 
 const NavMain = ({ setNavActive }) => {
   return (
@@ -15,9 +16,9 @@ const NavMain = ({ setNavActive }) => {
           alt="menu"
           src={hamburgerIcon}
         />
-        <a className="logo" href="/">
+        <Link className="logo" to="/">
           <img alt="logo" src={logo} />
-        </a>
+        </Link>
         <SearchContainer />
         <UserDetails />
       </Container>

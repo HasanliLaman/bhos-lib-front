@@ -1,6 +1,7 @@
 import React from "react";
-import StyleNavLinks from "./style";
+import { NavLink } from "react-router-dom";
 import closeIcon from "../../../assets/images/icon-close.svg";
+import StyleNavLinks from "./style";
 
 const NavLinks = ({ navActive, setNavActive }) => {
   return (
@@ -8,25 +9,52 @@ const NavLinks = ({ navActive, setNavActive }) => {
       <img onClick={() => setNavActive(false)} alt="close" src={closeIcon} />
       <ul>
         <li>
-          <a href="/">Home</a>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "")}
+            to="/"
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <a href="/">Home</a>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "")}
+            to="/about"
+          >
+            About
+          </NavLink>
         </li>
         <li>
-          <a href="/">Home</a>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "")}
+            to="/books"
+          >
+            Books
+          </NavLink>
         </li>
         <li>
-          <a href="/">Home</a>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "")}
+            to="/categories"
+          >
+            Categories
+          </NavLink>
         </li>
         <li>
-          <a href="/">Home</a>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "")}
+            to="/uploads"
+          >
+            Uploads
+          </NavLink>
         </li>
         <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/">Home</a>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "")}
+            to="/faq"
+          >
+            FAQ
+          </NavLink>
         </li>
       </ul>
     </StyleNavLinks>

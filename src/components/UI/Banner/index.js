@@ -2,6 +2,7 @@ import React from "react";
 import StyleBanner from "./style";
 import Container from "../../UI/Container";
 import arrow from "../../../assets/images/icon-chevron-right.svg";
+import { Link } from "react-router-dom";
 
 const Banner = ({ current }) => {
   return (
@@ -9,7 +10,7 @@ const Banner = ({ current }) => {
       <Container>
         <h1>{current}</h1>
         <div>
-          <a href="">Home</a>
+          <Link to="/">Home</Link>
           <img src={arrow} alt="arrow" />
           <p>{current}</p>
         </div>

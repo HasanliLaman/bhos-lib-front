@@ -13,7 +13,7 @@ const DailyReads = () => {
   return (
     <StyleDailyReads>
       <Container>
-        <Header title="Daily Reads" />
+        <Header title="Daily Reads" to="/books" />
         <Swiper
           slidesPerView={2}
           spaceBetween={20}

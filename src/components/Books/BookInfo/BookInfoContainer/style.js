@@ -12,7 +12,7 @@ const StyleBookInfoContainer = styled.div`
     gap: 3rem;
   }
 
-  & > img {
+  & > a > img {
     width: 100%;
     border-radius: 1.5rem;
   }

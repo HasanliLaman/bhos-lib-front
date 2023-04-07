@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import StyleFooterList from "./style";
 
 const FooterList = ({ header, items }) => {
@@ -8,7 +9,7 @@ const FooterList = ({ header, items }) => {
       <ul>
         {items.map((el) => (
           <li key={el}>
-            <a href="">{el}</a>
+            <Link to={el}>{el}</Link>
           </li>
         ))}
       </ul>

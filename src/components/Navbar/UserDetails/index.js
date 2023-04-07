@@ -1,26 +1,36 @@
 import React from "react";
-import StyleUserDetails from "./style";
+import { NavLink } from "react-router-dom";
 import userIcon from "../../../assets/images/icon-user.svg";
 import favoriteIcon from "../../../assets/images/icon-favorite.svg";
 import cartIcon from "../../../assets/images/icon-cart.svg";
+import StyleUserDetails from "./style";
 
 const UserDetails = () => {
   return (
     <StyleUserDetails>
       <li>
-        <a href="">
+        <NavLink
+          to="/account"
+          className={({ isActive }) => (isActive ? "icon-active" : "")}
+        >
           <img alt="user" src={userIcon} />
-        </a>
+        </NavLink>
       </li>
       <li>
-        <a href="">
+        <NavLink
+          to="/favorites"
+          className={({ isActive }) => (isActive ? "icon-active" : "")}
+        >
           <img alt="favorite" src={favoriteIcon} />
-        </a>
+        </NavLink>
       </li>
       <li>
-        <a href="">
+        <NavLink
+          to="/cart"
+          className={({ isActive }) => (isActive ? "icon-active" : "")}
+        >
           <img alt="cart" src={cartIcon} />
-        </a>
+        </NavLink>
       </li>
     </StyleUserDetails>
   );

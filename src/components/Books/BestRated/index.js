@@ -6,7 +6,7 @@ import StyleBestRated from "./style";
 const BestRated = () => {
   return (
     <StyleBestRated>
-      <Header title="Best Rated" />
+      <Header title="Best Rated" to="/books" />
       <ul>
         <li>
           <BookInfoContainer isHorizontal={true} />

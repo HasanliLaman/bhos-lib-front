@@ -55,7 +55,7 @@ const StyleNavLinks = styled.section`
     border-bottom: 0;
   }
 
-  .link-active a {
+  .link-active {
     color: var(--color-primary-hover);
   }
 

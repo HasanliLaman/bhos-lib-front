@@ -11,17 +11,14 @@ const FooterMain = () => {
       <Container>
         <FooterCompany />
         <FooterContact />
-        <FooterList
-          header="Explore"
-          items={["About us", "Sitemap", "Bookmarks", "Sign in"]}
-        />
+        <FooterList header="Explore" items={["About", "Faq", "Sign in"]} />
         <FooterList
           header="Our Service"
-          items={["About us", "Sitemap", "Bookmarks", "Sign in"]}
+          items={["Books", "Uploads", "Favorites", "Contact"]}
         />
         <FooterList
           header="Categories"
-          items={["About us", "Sitemap", "Bookmarks", "Sign in"]}
+          items={["Fiction", "Science", "Engineering", "Business"]}
         />
       </Container>
     </StyleFooterMain>

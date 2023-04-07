@@ -13,7 +13,7 @@ const GenreSlider = () => {
   return (
     <StyleGenreSlider>
       <Container>
-        <Header title="Genres Books" />
+        <Header title="Categories" to="categories" />
         <Swiper
           slidesPerView={1}
           spaceBetween={40}

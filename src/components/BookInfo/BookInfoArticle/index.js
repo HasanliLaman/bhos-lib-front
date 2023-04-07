@@ -3,6 +3,7 @@ import StockStatusBadge from "../StockStatusBadge";
 import StyleBookInfoArticle from "./style";
 import RatingContainer from "../../UI/Rating/RatingContainer";
 import Button from "../../UI/Button";
+import { Link } from "react-router-dom";
 
 const BookInfoArticle = () => {
   return (
@@ -31,7 +32,8 @@ const BookInfoArticle = () => {
       </div>
       <div className="book-categories">
         <p>Categories:</p>
-        <a href="">Math</a>,<a href="">PAE</a>,<a href="">Geology</a>
+        <Link to="/books">Math</Link>,<Link to="/books">PAE</Link>,
+        <Link to="/books">Geology</Link>
       </div>
     </StyleBookInfoArticle>
   );

@@ -9,6 +9,11 @@ const StyleUserDetails = styled.ul`
     display: flex;
   }
 
+  .icon-active {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(54%) saturate(2589%)
+      hue-rotate(333deg) brightness(106%) contrast(93%);
+  }
+
   img {
     height: 29px;
     filter: brightness(0) saturate(100%);

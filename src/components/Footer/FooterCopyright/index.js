@@ -1,13 +1,14 @@
 import React from "react";
-import StyleFooterCopyright from "./style";
+import { Link } from "react-router-dom";
 import Container from "../../UI/Container";
+import StyleFooterCopyright from "./style";
 
 const FooterCopyright = () => {
   return (
     <StyleFooterCopyright>
       <Container>
         Copyright © 2023
-        <a href=""> Bookory</a>. All rights reserved.
+        <Link to="/"> Bookory</Link>. All rights reserved.
       </Container>
     </StyleFooterCopyright>
   );
