@@ -7,7 +7,6 @@ const SignIn = () => {
   return (
     <StyleSignIn>
       <Container>
-        <h2>Sign In</h2>
         <SignInForm />
       </Container>
     </StyleSignIn>

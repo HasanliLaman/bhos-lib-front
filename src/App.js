@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import GlobalStyle from "./assets/styles/GlobalStyles";
-import FooterContainer from "./components/Footer/FooterContainer";
-import NavbarContainer from "./components/Navbar/NavContainer";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import Books from "./pages/Books";
@@ -10,25 +9,75 @@ import SignIn from "./pages/SignIn";
 import Categories from "./pages/Categories";
 import MyAccount from "./pages/MyAccount";
 import Error from "./components/UI/Error";
+import ProtectedRoute from "./utils/ProtectedRoute";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
       <div>
-        <NavbarContainer />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/books" element={<Books />} />
-          <Route path="/books/:id" element={<BookDetails />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/books"
+            element={
+              <ProtectedRoute>
+                <Books />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/books/:id"
+            element={
+              <ProtectedRoute>
+                <BookDetails />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/account" element={<MyAccount />} />
-          <Route path="/*" element={<Error />} />
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute>
+                <Cart />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/categories"
+            element={
+              <ProtectedRoute>
+                <Categories />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/account"
+            element={
+              <ProtectedRoute>
+                <MyAccount />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/*"
+            element={
+              <ProtectedRoute>
+                <Error />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
-        <FooterContainer />
       </div>
+      <ToastContainer position="bottom-right" />
     </>
   );
 };
