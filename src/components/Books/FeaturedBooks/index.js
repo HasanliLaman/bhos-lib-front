@@ -8,7 +8,7 @@ import BookInfoContainer from "../BookInfo/BookInfoContainer";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const FeaturedBooks = () => {
+const FeaturedBooks = ({ data }) => {
   return (
     <StyleFeaturedBooks>
       <Container>
@@ -30,33 +30,20 @@ const FeaturedBooks = () => {
           }}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
+          {data &&
+            data.data.data.doc
+              .filter((el, i) => i < 18 && i > 9)
+              .map((el) => (
+                <SwiperSlide key={el._id}>
+                  <BookInfoContainer
+                    img={el.cover}
+                    id={el._id}
+                    name={el.title}
+                    author={el.author}
+                    isHorizontal={true}
+                  />
+                </SwiperSlide>
+              ))}
         </Swiper>
       </Container>
     </StyleFeaturedBooks>

@@ -5,6 +5,10 @@ const StyleBookInfoArticle = styled.article`
   border-radius: 1.5rem;
   border: 1px solid var(--color-border);
 
+  .disabled {
+    pointer-events: none;
+  }
+
   h2 {
     font-size: 3.6rem;
     line-height: 4.4rem;
@@ -42,6 +46,12 @@ const StyleBookInfoArticle = styled.article`
   .buttons {
     padding: 2.6rem 0;
     border-bottom: 1px solid var(--color-border);
+    display: flex;
+    gap: 1.2rem;
+
+    button:last-of-type {
+      border: 1px solid var(--color-primary);
+    }
   }
 
   .book-categories {

@@ -4,12 +4,12 @@ import Container from "../../UI/Container";
 import BookImage from "../BookImage";
 import BookInfoArticle from "../BookInfoArticle";
 
-const BookInfoContainer = () => {
+const BookInfoContainer = ({ data }) => {
   return (
     <StyleBookInfoContainer>
       <Container>
-        <BookImage />
-        <BookInfoArticle />
+        <BookImage image={data.data.data.doc.cover} />
+        <BookInfoArticle info={data.data.data.doc} />
       </Container>
     </StyleBookInfoContainer>
   );

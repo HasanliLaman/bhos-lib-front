@@ -4,12 +4,12 @@ import BestRated from "../BestRated";
 import MostViewed from "../MostViewed";
 import StyleBestBooksContainer from "./style";
 
-const BestBooksContainer = () => {
+const BestBooksContainer = ({ data }) => {
   return (
     <StyleBestBooksContainer>
       <Container>
-        <BestRated />
-        <MostViewed />
+        <BestRated data={data} />
+        <MostViewed data={data} />
       </Container>
     </StyleBestBooksContainer>
   );

@@ -1,35 +1,29 @@
 import React from "react";
 import StyleGenreList from "./style";
 
-const GenreList = () => {
+const GenreList = ({ data, query, setQuery }) => {
+  const onChangeCategory = (category) => {
+    query.set("category", category);
+    setQuery(query);
+  };
+
   return (
     <StyleGenreList>
       <header>Genre</header>
       <form>
-        <div className="form-group">
-          <input type="radio" id="math" name="genre" value="HTML" />
-          <label for="math">Math</label>
-        </div>
-        <div className="form-group">
-          <input type="radio" id="physics" name="genre" value="HTML" />
-          <label for="physics">Physics</label>
-        </div>
-        <div className="form-group">
-          <input type="radio" id="geography" name="genre" value="HTML" />
-          <label for="geography">Geography</label>
-        </div>
-        <div className="form-group">
-          <input type="radio" id="fiction" name="genre" value="HTML" />
-          <label for="fiction">Fiction</label>
-        </div>
-        <div className="form-group">
-          <input type="radio" id="literature" name="genre" value="HTML" />
-          <label for="literature">Literature</label>
-        </div>
-        <div className="form-group">
-          <input type="radio" id="geology" name="genre" value="HTML" />
-          <label for="geology">Geology</label>
-        </div>
+        {data &&
+          data.data.data.doc.map((el) => (
+            <div key={el._id} className="form-group">
+              <input
+                onChange={() => onChangeCategory(el.slug)}
+                type="radio"
+                id={el.slug}
+                name="genre"
+                value={el.slug}
+              />
+              <label htmlFor={el.slug}>{el.name}</label>
+            </div>
+          ))}
       </form>
     </StyleGenreList>
   );

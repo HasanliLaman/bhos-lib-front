@@ -10,13 +10,16 @@ const StyleGenreElement = styled.div`
   font-size: 2rem;
   font-weight: 600;
   line-height: 2.8rem;
-  color: var(--color-white);
+  color: var(--color-accent);
   width: 100%;
   height: 230px;
   cursor: pointer;
 
   p {
     z-index: 1;
+    background: var(--color-white);
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.5rem;
   }
 
   img {

@@ -7,3 +7,9 @@ const config = {
 export const api = axios.create(config);
 
 export const login = (body) => api.post("/users/login", body);
+
+export const getCategories = () => api.get("/categories");
+
+export const getBooks = () => api.get("/books");
+
+export const getBookInfo = (id) => api.get(`/books/${id}`);

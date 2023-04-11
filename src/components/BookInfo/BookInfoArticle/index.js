@@ -1,39 +1,41 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import StockStatusBadge from "../StockStatusBadge";
 import StyleBookInfoArticle from "./style";
 import RatingContainer from "../../UI/Rating/RatingContainer";
 import Button from "../../UI/Button";
-import { Link } from "react-router-dom";
+import pdf from "../../../assets/files/pdf.pdf";
 
-const BookInfoArticle = () => {
+const BookInfoArticle = ({ info }) => {
   return (
     <StyleBookInfoArticle>
-      <StockStatusBadge stocked={true} />
+      <StockStatusBadge stocked={info.quantity} />
       <div className="book-details">
-        <h2>Vampire Sire 2</h2>
+        <h2>{info.title}</h2>
         <div>
-          <p>Author: Laman Hasanli</p>
+          <p>Author: {info.author}</p>
           <RatingContainer rating={4} />
         </div>
       </div>
       <div className="book-description">
         <h3>Description</h3>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio,
-          dolores ipsam! Eos, soluta commodi, accusamus consectetur harum sunt
-          cum ad, ipsum laboriosam exercitationem eligendi animi voluptatibus
-          sit quas non minus. Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Iste id mollitia vitae provident atque ullam harum magnam
-          voluptatum cumque quod.
-        </p>
+        <p>{info.description}</p>
       </div>
       <div className="buttons">
-        <Button text="Request Book" type="primary" />
+        <Button
+          className={info.quantity ? "" : "disabled"}
+          text="Request Book"
+          type="primary"
+        />
+        <a href={pdf} download>
+          <Button text="Download PDF" />
+        </a>
       </div>
       <div className="book-categories">
         <p>Categories:</p>
-        <Link to="/books">Math</Link>,<Link to="/books">PAE</Link>,
-        <Link to="/books">Geology</Link>
+        <Link to={`/books?category=${info.category.slug}`}>
+          {info.category.name}
+        </Link>
       </div>
     </StyleBookInfoArticle>
   );

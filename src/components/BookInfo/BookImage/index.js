@@ -1,11 +1,10 @@
 import React from "react";
-import book from "../../../assets/images/book-cover.jpg";
 import StyleBookImage from "./style";
 
-const BookImage = () => {
+const BookImage = ({ image }) => {
   return (
     <StyleBookImage>
-      <img src={book} alt="book-cover" />
+      <img src={image} alt="book-cover" />
     </StyleBookImage>
   );
 };

@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Header from "../../UI/Header";
 
-const DailyReads = () => {
+const DailyReads = ({ data }) => {
   return (
     <StyleDailyReads>
       <Container>
@@ -27,33 +27,20 @@ const DailyReads = () => {
           }}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
-          <SwiperSlide>
-            <BookInfoContainer />
-          </SwiperSlide>
+          {data &&
+            data.data.data.doc
+              .filter((el, i) => i < 35 && i > 18)
+              .map((el) => (
+                <SwiperSlide key={el._id}>
+                  <BookInfoContainer
+                    img={el.cover}
+                    id={el._id}
+                    name={el.title}
+                    author={el.author}
+                    isHorizontal={true}
+                  />
+                </SwiperSlide>
+              ))}
         </Swiper>
       </Container>
     </StyleDailyReads>

@@ -6,6 +6,14 @@ const GenreSlider = styled.div`
   .swiper-button-next,
   .swiper-button-prev {
     color: var(--color-accent);
+    background: var(--color-white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    &::after {
+      font-size: 20px;
+    }
   }
 
   @media (min-width: 768px) {
