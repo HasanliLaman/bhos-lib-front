@@ -6,6 +6,7 @@ import GenreElement from "../GenreElement";
 import Container from "../../UI/Container";
 import Header from "../../UI/Header";
 import { getCategories } from "../../../server";
+import Loading from "../../UI/Loading";
 import StyleGenreSlider from "./style";
 
 import "swiper/css";
@@ -18,6 +19,7 @@ const GenreSlider = () => {
     <StyleGenreSlider>
       <Container>
         <Header title="Categories" to="categories" />
+        {!data && <Loading />}
         <Swiper
           slidesPerView={1}
           spaceBetween={40}

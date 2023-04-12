@@ -7,6 +7,7 @@ import Banner from "../../components/UI/Banner";
 import Container from "../../components/UI/Container";
 import GenreList from "../../components/Genres/GenreList";
 import BookGrid from "../../components/Books/BooksGrid";
+import Loading from "../../components/UI/Loading";
 
 const Books = () => {
   const books = useQuery(["books"], getBooks);
@@ -24,6 +25,7 @@ const Books = () => {
       <Banner current="Explore Books" />
       <Container>
         <GenreList query={query} setQuery={setQuery} data={categories.data} />
+        {!books.data && <Loading />}
         <BookGrid query={query} data={books.data} />
       </Container>
     </StyleBooks>

@@ -1,9 +1,10 @@
-import React from "react";
-import Container from "../../UI/Container";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
+import React from "react";
 import StyleFeaturedBooks from "./style";
+import Container from "../../UI/Container";
 import BookInfoContainer from "../BookInfo/BookInfoContainer";
+import Loading from "../../UI/Loading";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -13,6 +14,7 @@ const FeaturedBooks = ({ data }) => {
     <StyleFeaturedBooks>
       <Container>
         <h2>Featured Books</h2>
+        {!data && <Loading />}
         <Swiper
           slidesPerView={2}
           spaceBetween={20}

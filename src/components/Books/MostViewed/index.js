@@ -1,11 +1,13 @@
 import React from "react";
 import BookInfoContainer from "../BookInfo/BookInfoContainer";
+import Loading from "../../UI/Loading";
 import StyleMostViewed from "./style";
 
 const MostViewed = ({ data }) => {
   return (
     <StyleMostViewed>
       <h2>Most Viewed</h2>
+      {!data && <Loading />}
       <ul>
         {data &&
           data.data.data.doc

@@ -8,6 +8,7 @@ import BookDetails from "./pages/BookDetails";
 import SignIn from "./pages/SignIn";
 import Categories from "./pages/Categories";
 import MyAccount from "./pages/MyAccount";
+import Uploads from "./pages/Uploads";
 import Error from "./components/UI/Error";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import "react-toastify/dist/ReactToastify.css";
@@ -39,6 +40,14 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <BookDetails />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/uploads"
+            element={
+              <ProtectedRoute>
+                <Uploads />
               </ProtectedRoute>
             }
           />

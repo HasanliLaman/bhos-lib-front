@@ -1,12 +1,14 @@
 import React from "react";
 import Header from "../../UI/Header";
 import BookInfoContainer from "../BookInfo/BookInfoContainer";
+import Loading from "../../UI/Loading";
 import StyleBestRated from "./style";
 
 const BestRated = ({ data }) => {
   return (
     <StyleBestRated>
       <Header title="Best Rated" to="/books" />
+      {!data && <Loading />}
       <ul>
         {data &&
           data.data.data.doc

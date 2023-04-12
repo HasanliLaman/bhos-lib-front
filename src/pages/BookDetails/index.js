@@ -4,10 +4,13 @@ import { useQuery } from "@tanstack/react-query";
 import { getBookInfo } from "../../server";
 import BookInfoContainer from "../../components/BookInfo/BookInfoContainer";
 import Banner from "../../components/UI/Banner";
+import Loading from "../../components/UI/Loading";
 
 const BookDetails = () => {
   const { id } = useParams();
-  const { data } = useQuery(["bookInfo"], () => getBookInfo(id));
+  const { data, isLoading, isRefetching } = useQuery(["bookInfo"], () =>
+    getBookInfo(id)
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,7 +20,8 @@ const BookDetails = () => {
   return (
     <div>
       <Banner current="Book Details" />
-      {data && <BookInfoContainer data={data} />}
+      {(isLoading || isRefetching) && <Loading style={{ padding: "6rem 0" }} />}
+      {!isLoading && !isRefetching && data && <BookInfoContainer data={data} />}
     </div>
   );
 };

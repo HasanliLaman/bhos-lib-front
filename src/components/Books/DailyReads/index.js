@@ -1,7 +1,8 @@
 import React from "react";
-import Container from "../../UI/Container";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
+import Container from "../../UI/Container";
+import Loading from "../../UI/Loading";
 import BookInfoContainer from "../BookInfo/BookInfoContainer";
 import StyleDailyReads from "./style";
 
@@ -14,6 +15,7 @@ const DailyReads = ({ data }) => {
     <StyleDailyReads>
       <Container>
         <Header title="Daily Reads" to="/books" />
+        {!data && <Loading />}
         <Swiper
           slidesPerView={2}
           spaceBetween={20}
