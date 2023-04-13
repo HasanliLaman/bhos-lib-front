@@ -1,4 +1,7 @@
 import axios from "axios";
+import Cookie from "../utils/Cookie";
+
+const tokenCookie = new Cookie("token");
 
 const config = {
   baseURL: "http://localhost:5000",
@@ -13,3 +16,10 @@ export const getCategories = () => api.get("/categories");
 export const getBooks = () => api.get("/books");
 
 export const getBookInfo = (id) => api.get(`/books/${id}`);
+
+export const getMe = () =>
+  api.get(`/users/me`, {
+    headers: {
+      Authorization: `Bearer ${tokenCookie.getCookie()}`,
+    },
+  });
