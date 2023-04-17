@@ -17,6 +17,8 @@ export const getBooks = () => api.get("/books");
 
 export const getBookInfo = (id) => api.get(`/books/${id}`);
 
+export const searchBook = (title) => api.get(`/books/search?title=${title}`);
+
 export const getMe = () =>
   api.get(`/users/me`, {
     headers: {

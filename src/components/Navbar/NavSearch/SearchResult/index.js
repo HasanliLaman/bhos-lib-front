@@ -1,28 +1,25 @@
 import React from "react";
 import StyleSearchResult from "./style";
-import book from "../../../../assets/images/book-cover.jpg";
 import { Link } from "react-router-dom";
 
-const SearchResult = () => {
+const SearchResult = ({ data }) => {
+  console.log(data);
   return (
     <StyleSearchResult>
-      <ul>
-        <li>
-          <Link to="/books">
-            <img src={book} alt="book cover" />
-            <p>The Story of Success</p>
-            <span>Laman Hasanli</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/books">
-            <img src={book} alt="book cover" />
-            <p>The Story of Success</p>
-            <span>Laman Hasanli</span>
-          </Link>
-        </li>
-      </ul>
-      {/* <p>No results</p> */}
+      {!!data.length && (
+        <ul>
+          {data.map((el) => (
+            <li key={el._id}>
+              <Link to={`/books/${el._id}`}>
+                <img src={el.cover} alt="book cover" />
+                <p>{el.title}</p>
+                <span>{el.author}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+      {!data.length && <p>No results</p>}
     </StyleSearchResult>
   );
 };
