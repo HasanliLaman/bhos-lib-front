@@ -1,5 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 import { Navigation } from "swiper";
 import { useQuery } from "@tanstack/react-query";
 import GenreElement from "../GenreElement";
@@ -40,7 +41,9 @@ const GenreSlider = () => {
           {data &&
             data.data.data.doc.map((el) => (
               <SwiperSlide key={el.slug}>
-                <GenreElement id={el.slug} text={el.name} img={el.image} />
+                <Link to={`/books?category=${el.slug}`}>
+                  <GenreElement id={el.slug} text={el.name} img={el.image} />
+                </Link>
               </SwiperSlide>
             ))}
         </Swiper>
