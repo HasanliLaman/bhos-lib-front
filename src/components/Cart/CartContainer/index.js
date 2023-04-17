@@ -4,7 +4,6 @@ import StyleCartContainer from "./style";
 import Container from "../../UI/Container";
 
 const CartContainer = ({ data }) => {
-  console.log(data.books);
   return (
     <StyleCartContainer>
       <Container>
