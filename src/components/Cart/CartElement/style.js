@@ -9,6 +9,10 @@ const StyleCartElement = styled.div`
   align-items: center;
   gap: 1rem;
 
+  .disabled {
+    pointer-events: none;
+  }
+
   article {
     display: flex;
     flex-direction: column;

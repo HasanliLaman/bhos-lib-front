@@ -3,19 +3,19 @@ import CartElement from "../CartElement";
 import StyleCartContainer from "./style";
 import Container from "../../UI/Container";
 
-const CartContainer = () => {
+const CartContainer = ({ data }) => {
+  console.log(data.books);
   return (
     <StyleCartContainer>
       <Container>
-        <CartElement status="in-use" />
-        <CartElement status="returned" />
-        <CartElement status="in-use" />
-        <CartElement status="requested" />
-        <CartElement status="in-use" />
-        <CartElement status="in-use" />
-        <CartElement status="requested" />
-        <CartElement status="returned" />
-        <CartElement status="in-use" />
+        {data.books.map((el) => (
+          <CartElement
+            date={el.date}
+            book={el.bookId}
+            key={el._id}
+            status={el.status}
+          />
+        ))}
       </Container>
     </StyleCartContainer>
   );

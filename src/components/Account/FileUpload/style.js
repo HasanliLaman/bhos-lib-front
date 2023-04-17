@@ -9,6 +9,7 @@ const StyleFileUpload = styled.div`
   justify-content: center;
   height: 350px;
   border: 5px dashed var(--color-border);
+  cursor: pointer;
 
   img {
     width: 150px;
