@@ -15,6 +15,13 @@ export const getCategories = () => api.get("/categories");
 
 export const getBooks = () => api.get("/books");
 
+export const getUploads = () =>
+  api.get("/uploads", {
+    headers: {
+      Authorization: `Bearer ${tokenCookie.getCookie()}`,
+    },
+  });
+
 export const getBookInfo = (id) => api.get(`/books/${id}`);
 
 export const searchBook = (title) => api.get(`/books/search?title=${title}`);
